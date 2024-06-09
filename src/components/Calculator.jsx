@@ -13,6 +13,7 @@ function Calculator() {
   const [equation, dispatch] = useReducer(reducer, "");
 
   function reducer(equation, action) {
+    // eslint-disable-next-line
     switch (action.type) {
       case "number":
         if (equation === "" && action.value === "0") {
