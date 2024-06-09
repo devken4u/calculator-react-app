@@ -1,5 +1,5 @@
 import "./calculator.css";
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 
 function CalculatorButton({ className, value, buttonClick, type }) {
   return (
@@ -10,13 +10,12 @@ function CalculatorButton({ className, value, buttonClick, type }) {
 }
 
 function Calculator() {
-  // const [equation, setEquation] = useState("");
   const [equation, dispatch] = useReducer(reducer, "");
 
   function reducer(equation, action) {
     switch (action.type) {
       case "number":
-        if (equation == "" && action.value == "0") {
+        if (equation === "" && action.value === "0") {
           return "";
         } else {
           return equation + action.value;
@@ -30,6 +29,9 @@ function Calculator() {
         } else {
           return equation + ".";
         }
+
+      case "operator":
+        break;
 
       case "clear":
         return "";
