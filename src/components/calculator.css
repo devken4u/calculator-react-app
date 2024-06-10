@@ -104,7 +104,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.5s;
 }
 
 .theme-container {
@@ -134,7 +133,7 @@
 }
 
 .hide {
-  opacity: 0;
+  display: none;
 }
 
 @media all and (min-width: 1199px) {

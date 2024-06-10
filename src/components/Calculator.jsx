@@ -91,7 +91,7 @@ function Calculator() {
         break;
 
       case "equals":
-        if (!(preview === "" && equation === "")) {
+        if (preview !== "" && equation !== "") {
           // eslint-disable-next-line
           const result = eval(preview + equation);
           setPreview("");
